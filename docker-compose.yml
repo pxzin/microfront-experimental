@@ -1,0 +1,14 @@
+version: '3'
+services:
+  bff:
+    build: ./bff
+    ports:
+      - "3000:3000"
+  mf_drawer:
+    build: ./fe_menu
+    ports:
+      - "3001:3001"
+  mf_video:
+    build: ./fe_container
+    ports:
+      - "3002:3002"

@@ -1,0 +1,25 @@
+{
+  "name": "fe_container",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "http-server public -c-1 -p 3002",
+    "build": "tsc && npx sass src/styles.scss public/styles.css",
+    "dev": "concurrently \"tsc -w\" \"npx sass --watch src/styles.scss:public/styles.css\" \"nodemon -w dist -w public -w src -e js,html,css --exec \\\"http-server public -c-1 -p 3002\\\"\"",
+    "test": "jest"
+  },
+  "dependencies": {
+    "typescript": "^4.0.0",
+    "sass": "^1.32.0",
+    "http-server": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.0",
+    "jest": "^26.0.0",
+    "ts-jest": "^26.0.0",
+    "ts-loader": "^8.0.0",
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.12"
+  }
+}
